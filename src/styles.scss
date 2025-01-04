@@ -1,0 +1,79 @@
+// Editor base styles
+.ProseMirror {
+  > * + * {
+    margin-top: 0.75em;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// Bubble menu styles
+.bubble-menu {
+  position: absolute;
+  z-index: 50;
+  visibility: visible !important;
+}
+
+.tippy-box {
+  z-index: 100;
+  position: relative;
+}
+
+// Typography styles
+.prose {
+  h1 {
+    @apply text-3xl font-bold mb-4;
+  }
+  
+  h2 {
+    @apply text-2xl font-bold mb-3;
+  }
+  
+  p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  ul, ol {
+    @apply my-4 pl-4;
+  }
+
+  li {
+    @apply mb-2;
+  }
+
+  blockquote {
+    @apply border-l-4 border-gray-300 pl-4 italic my-4;
+  }
+
+  pre {
+    @apply bg-gray-100 rounded-md p-4 my-4;
+    
+    code {
+      @apply text-sm;
+    }
+  }
+}
+// Color picker animation
+.bubble-menu [role="tooltip"] {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Ensure color picker is above other elements
+.bubble-menu {
+  .relative {
+    position: relative;
+  }
+}
