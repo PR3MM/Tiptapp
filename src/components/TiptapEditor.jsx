@@ -145,9 +145,12 @@ function greet(name) {
   <p>
     Below the editor, you can see an embedded webpage. This extension allows you to embed interactive content directly. The embedded website is:
     <a href="https://www.pexels.com/search/India/" target="_blank">Pexels </a>. You can interact with this webpage, browse images, and explore the content.
-    You can also Change Webpage by clicking the button below the embedded webpage.
-  
-  </p>
+    
+    
+    </p>
+    <p>
+    You can also change webpage by clicking the button below the embedded webpage.
+    </p>
 
   
 
