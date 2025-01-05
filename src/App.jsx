@@ -1,6 +1,6 @@
 
 import './App.css'
-import TiptapEditor from './Components/TiptapEditor'
+import TiptapEditor from './components/TiptapEditor'
 
 function App() {
 
