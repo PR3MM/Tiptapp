@@ -8,7 +8,7 @@ export const Webpage = Node.create({
       inline: false,
       width: 640,
       height: 480,
-      defaultUrl: 'https://www.google.com', // Default to Google if no URL is provided
+      defaultUrl: 'https://www.google.com', 
       HTMLAttributes: {},
     };
   },
@@ -26,7 +26,7 @@ export const Webpage = Node.create({
   addAttributes() {
     return {
       src: {
-        default: this.options.defaultUrl, // Default source URL (Google)
+        default: this.options.defaultUrl, 
       },
       width: {
         default: this.options.width,

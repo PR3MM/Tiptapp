@@ -1,4 +1,3 @@
-// Editor base styles
 .ProseMirror {
   > * + * {
     margin-top: 0.75em;
@@ -9,7 +8,6 @@
   }
 }
 
-// Bubble menu styles
 .bubble-menu {
   position: absolute;
   z-index: 50;
@@ -21,7 +19,6 @@
   position: relative;
 }
 
-// Typography styles
 .prose {
   h1 {
     @apply text-3xl font-bold mb-4;
@@ -55,7 +52,6 @@
     }
   }
 }
-// Color picker animation
 .bubble-menu [role="tooltip"] {
   animation: fadeIn 0.2s ease-out;
 }
@@ -71,7 +67,6 @@
   }
 }
 
-// Ensure color picker is above other elements
 .bubble-menu {
   .relative {
     position: relative;

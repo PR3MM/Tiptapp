@@ -11,13 +11,13 @@ import EmojiCustom from '../components/EmojiCustom';
 import { Webpage } from '../components/WebpageCustom';
 
 const TiptapEditor = () => {
-  const [iframeSrc, setIframeSrc] = useState('https://www.x.com/'); 
+  const [iframeSrc, setIframeSrc] = useState('https://www.pexels.com/search/India/');
 
   const editor = useEditor({
     extensions: [
-      Document, 
-      Paragraph, 
-      Text, 
+      Document,
+      Paragraph,
+      Text,
       StarterKit,
       TextStyle,
       Color,
@@ -78,31 +78,28 @@ const TiptapEditor = () => {
     <div className="max-w-4xl mx-auto p-4">
       {editor && (
         <>
-          
+
 
           <BubbleMenu editor={editor} tippyOptions={{ duration: 100, offset: [0, 20] }}>
             <div className="bg-gray-900 px-4 py-2 rounded-lg shadow-xl flex items-center gap-3 border border-gray-700">
               <button
                 onClick={() => editor.chain().focus().toggleBold().run()}
-                className={`px-3 py-2 rounded-lg hover:bg-gray-700/50 transition-colors ${
-                  editor.isActive('bold') ? 'bg-gray-700 text-white' : 'text-gray-200'
-                }`}
+                className={`px-3 py-2 rounded-lg hover:bg-gray-700/50 transition-colors ${editor.isActive('bold') ? 'bg-gray-700 text-white' : 'text-gray-200'
+                  }`}
               >
                 <strong>B</strong>
               </button>
               <button
                 onClick={() => editor.chain().focus().toggleItalic().run()}
-                className={`px-3 py-2 rounded-lg hover:bg-gray-700/50 transition-colors ${
-                  editor.isActive('italic') ? 'bg-gray-700 text-white' : 'text-gray-200'
-                }`}
+                className={`px-3 py-2 rounded-lg hover:bg-gray-700/50 transition-colors ${editor.isActive('italic') ? 'bg-gray-700 text-white' : 'text-gray-200'
+                  }`}
               >
                 <em>I</em>
               </button>
               <button
                 onClick={() => editor.chain().focus().toggleStrike().run()}
-                className={`px-3 py-2 rounded-lg hover:bg-gray-700/50 transition-colors ${
-                  editor.isActive('strike') ? 'bg-gray-700 text-white' : 'text-gray-200'
-                }`}
+                className={`px-3 py-2 rounded-lg hover:bg-gray-700/50 transition-colors ${editor.isActive('strike') ? 'bg-gray-700 text-white' : 'text-gray-200'
+                  }`}
               >
                 <del>S</del>
               </button>
@@ -111,20 +108,20 @@ const TiptapEditor = () => {
 
           <div className="mb-4 p-4 bg-gray-100 rounded-lg space-y-4">
             <div className="flex flex-wrap gap-3 items-center border-b pb-3">
-              <button 
+              <button
                 onClick={() => editor.chain().focus().toggleBlockquote().run()}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${editor.isActive('blockquote') ? 'bg-gray-700 text-white' : 'text-gray-600 hover:bg-gray-200'}`}
               >
                 Toggle Blockquote
               </button>
-              <button 
+              <button
                 onClick={() => editor.chain().focus().setBlockquote().run()}
                 disabled={!editor.can().setBlockquote()}
                 className="px-3 py-2 rounded-lg text-sm font-medium bg-gray-300 hover:bg-gray-400 transition-colors"
               >
                 Set Blockquote
               </button>
-              <button  
+              <button
                 onClick={() => editor.chain().focus().unsetBlockquote().run()}
                 disabled={!editor.can().unsetBlockquote()}
                 className="px-3 py-2 rounded-lg text-sm font-medium bg-gray-300 hover:bg-gray-400 transition-colors"
@@ -133,7 +130,8 @@ const TiptapEditor = () => {
               </button>
             </div>
 
-            {/* Font Family Controls */}
+
+
             <div className="flex flex-wrap gap-3 items-center border-b pb-3">
               <span className="text-sm font-medium text-gray-700">Font:</span>
               {fontFamilies.map(({ name, label }) => (
@@ -154,7 +152,6 @@ const TiptapEditor = () => {
               </button>
             </div>
 
-            {/* Color Controls */}
             <div className="flex flex-wrap gap-3 items-center">
               <span className="text-sm font-medium text-gray-700">Color:</span>
               <input
@@ -163,16 +160,15 @@ const TiptapEditor = () => {
                 value={editor.getAttributes('textStyle').color || '#000000'}
                 className="w-8 h-8 rounded cursor-pointer"
               />
-              
+
               {colorButtons.map(({ color, label }) => (
                 <button
                   key={color}
                   onClick={() => editor.chain().focus().setColor(color).run()}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    editor.isActive('textStyle', { color }) 
-                      ? 'ring-2 ring-offset-2 ring-gray-400' 
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${editor.isActive('textStyle', { color })
+                      ? 'ring-2 ring-offset-2 ring-gray-400'
                       : 'hover:ring-2 hover:ring-offset-2 hover:ring-gray-300'
-                  }`}
+                    }`}
                   style={{
                     backgroundColor: color,
                     color: isLightColor(color) ? '#000' : '#fff'
@@ -181,7 +177,7 @@ const TiptapEditor = () => {
                   {label}
                 </button>
               ))}
-              
+
               <button
                 onClick={() => editor.chain().focus().unsetColor().run()}
                 className="px-4 py-2 rounded-lg text-sm font-medium bg-gray-200 hover:bg-gray-300 transition-colors"
@@ -189,33 +185,37 @@ const TiptapEditor = () => {
                 Clear Color
               </button>
             </div>
-            
+
           </div>
 
           <div className="border rounded-lg shadow-sm">
-            {/* Iframe displaying the webpage */}
+
+            <EditorContent
+              editor={editor}
+              className="prose max-w-none min-h-[300px] p-4 focus:outline-none"
+
+            />
+          </div>
+
+
           <div className="mb-4 p-4  rounded-lg">
-            <iframe 
-              src={iframeSrc} 
-              width="100%" 
-              height="400px" 
-              title="Webpage" 
+            <iframe
+              src={iframeSrc}
+              width="100%"
+              height="400px"
+              title="Webpage"
               frameBorder="0"
               className="rounded-lg shadow-lg"
             />
-            <button 
+            <button
               onClick={handleChangeWebpage}
               className="mt-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-blue-600 transition-colors"
             >
               Change Webpage
             </button>
           </div>
-            <EditorContent 
-              editor={editor} 
-              className="prose max-w-none min-h-[300px] p-4 focus:outline-none" 
-              
-            />
-          </div>
+
+
         </>
       )}
     </div>

@@ -4,7 +4,6 @@ import tippy from 'tippy.js'
 import { ReactRenderer } from '@tiptap/react'
 import React from 'react'
 
-// Simple list of emojis
 const emojiList = [
   { emoji: '😀', name: 'smile' },
   { emoji: '😂', name: 'joy' },
@@ -54,7 +53,6 @@ const suggestion = {
           editor: props.editor,
         })
 
-        // Make sure we have clientRect before creating popup
         if (!props.clientRect) {
           return
         }
@@ -73,7 +71,6 @@ const suggestion = {
       onUpdate: (props) => {
         component.updateProps(props)
 
-        // Update position if we have clientRect
         if (!props.clientRect) {
           return
         }
