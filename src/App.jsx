@@ -1,5 +1,6 @@
 
 import './App.css'
+import Footer from './components/Footer'
 import TiptapEditor from './components/TiptapEditor'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   return (
     <>
       <TiptapEditor />
+      <Footer />
     </>
   )
 }

@@ -23,7 +23,7 @@ const contentx = `<h1>Welcome to the Tiptap Editor Demo 🎉</h1>
 <h5>Heading Level 5</h5>
 <h6>Heading Level 6</h6>
 
-<h2>Horizontal Rule</h2>
+<h4>Horizontal Rule</h4>
 <p>Use this extension to render an <code>&lt;hr&gt;</code> HTML tag.</p>
 <p>Type three dashes (<code>---</code>) or three underscores and a space (<code>___ </code>) at the beginning of a new line and it will magically transform into a horizontal rule.</p>
 <hr />
