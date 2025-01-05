@@ -10,6 +10,149 @@ import { useEditor, EditorContent, BubbleMenu } from '@tiptap/react';
 import EmojiCustom from '../components/EmojiCustom';
 import { Webpage } from '../components/WebpageCustom';
 
+
+const contentx = `<h1>Welcome to the Tiptap Editor Demo 🎉</h1>
+<p>This document demonstrates how to use <strong>all the features</strong> available in the editor. Follow along and try them out!</p>
+
+<h2>Headings</h2>
+<p>Type <code>#</code> at the beginning of a new line and it will magically transform into a heading, same for <code>##</code>, <code>###</code>, <code>####</code>, <code>#####</code>, and <code>######</code>.</p>
+<h1>Heading Level 1</h1>
+<h2>Heading Level 2</h2>
+<h3>Heading Level 3</h3>
+<h4>Heading Level 4</h4>
+<h5>Heading Level 5</h5>
+<h6>Heading Level 6</h6>
+
+<h2>Horizontal Rule</h2>
+<p>Use this extension to render an <code>&lt;hr&gt;</code> HTML tag.</p>
+<p>Type three dashes (<code>---</code>) or three underscores and a space (<code>___ </code>) at the beginning of a new line and it will magically transform into a horizontal rule.</p>
+<hr />
+
+<h2>Text and Marks</h2>
+<h3>Bold</h3>
+<p>Type <code>**two asterisks**</code> or <code>__two underlines__</code> and it will magically transform into bold text while you type.</p>
+<p><strong>This is bold text.</strong></p>
+
+<h3>Italic</h3>
+<p>Type <code>*one asterisk*</code> or <code>_one underline_</code> and it will magically transform into italic text while you type.</p>
+<p><em>This is italic text.</em></p>
+
+<h3>Strikethrough</h3>
+<p>Type <code>~~ text between tildes ~~</code> and it will magically strike through while you type.</p>
+<p><s>This is striked-through text.</s></p>
+
+<h3>Code</h3>
+<p>Type something with <code>&#96;back-ticks around&#96;</code> and it will magically transform into inline code while you type.</p>
+<p><code>This is inline code.</code></p>
+
+<h2>Lists</h2>
+<h3>Bullet List</h3>
+<ul>
+  <li>Item 1</li>
+  <li>Item 2
+    <ul>
+      <li>Nested Item 2.1</li>
+      <li>Nested Item 2.2</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Ordered List</h3>
+<ol>
+  <li>First Item</li>
+  <li>Second Item
+    <ol>
+      <li>Sub Item 2.1</li>
+      <li>Sub Item 2.2</li>
+    </ol>
+  </li>
+</ol>
+
+<h2>Blockquote</h2>
+<blockquote>
+  <p>This is a blockquote.<br />Select this text and toggle or unset blockquote using the bubble menu or toolbar.</p>
+</blockquote>
+
+<h2>Code Block</h2>
+<pre><code>// This is a code block.
+function greet(name) {
+  return 'Hello, ' + name + '!';
+}
+</code></pre> 
+
+<h2>Extensions</h2>
+<p>Try using drop cursors and gap cursors while interacting with content.</p>
+
+ <h2>Important Extensions</h2>
+
+
+  <h3>Blockquote</h3>
+  <p>
+    - <strong>Toggle Blockquote:</strong> Use this button to switch between a blockquote and regular text.<br />
+    - <strong>Set Blockquote:</strong> Highlight your text and click this button to format it as a blockquote.<br />
+    - <strong>Unset Blockquote:</strong> Removes the blockquote formatting from your text.
+    <h5> <strong>Buttons are available above the editor</strong></h5>
+  </p>
+
+  <h3>Font Changer</h3>
+  <p>
+    Buttons above the editor allow you to change the font of the selected text. Available options include:
+    
+        Inter,
+        Comic Sans,
+        Serif,
+        Monospace,
+        Cursive,
+       Clear Font   Reverts to the default font.
+    
+    <h5> <strong>Buttons are available above the editor</strong></h5>
+
+  </p>
+
+  <h3>Color Changer</h3>
+  
+    Buttons above the editor let you apply or remove text colors. Available options include:
+  
+    <span >Purple,</span>
+    <span >Red,</span>
+    <span >Orange,</span>
+    <span >Yellow,</span>
+    <span >Blue,</span>
+    <span >Teal,</span>
+    <span >Green,</span>
+    Clear Color: Removes any applied color.
+    
+    <h5> <strong>Buttons are available above the editor</strong></h5>
+
+
+  <h3>Bubble Menu</h3>
+  <p>
+    When you select text, a floating bubble menu appears with the following options:
+    <ul>
+      <li><strong>Bold:</strong> Makes the selected text bold.</li>
+      <li><strong>Italic:</strong> Applies italic formatting to the selected text.</li>
+      <li><strong>Strikethrough:</strong> Strikes through the selected text.</li>
+    </ul>
+  </p>
+
+  <h2>Custom Extensions</h2>
+<h3>Emoji Pop-Up</h3>
+  <p>
+    When you type <code>:</code>, a small popup appears, allowing you to select emojis. Select through the options to quickly add an emoji to your text!
+  </p>
+
+  <h3>Webpage Embedding</h3>
+  <p>
+    Below the editor, you can see an embedded webpage. This extension allows you to embed interactive content directly. The embedded website is:
+    <a href="https://www.pexels.com/search/India/" target="_blank">Pexels </a>. You can interact with this webpage, browse images, and explore the content.
+
+  
+  </p>
+
+  
+
+`;
+
 const TiptapEditor = () => {
   const [iframeSrc, setIframeSrc] = useState('https://www.pexels.com/search/India/');
 
@@ -30,22 +173,7 @@ const TiptapEditor = () => {
         class: 'prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none',
       },
     },
-    content: `
-      <h2>
-        Hi there,
-      </h2>
-      <p>
-        this is a basic <em>basic</em> example of <strong>Tiptap</strong>. Sure, there are all kind of basic text styles you'd probably expect from a text editor. But wait until you see the lists:
-      </p>
-      <ul>
-        <li>
-          That's a bullet list with one …
-        </li>
-        <li>
-          … or two list items.
-        </li>
-      </ul>
-    `,
+    content: contentx,
     autofocus: true,
     editable: true,
     injectCSS: false,
