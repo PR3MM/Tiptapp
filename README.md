@@ -3,7 +3,7 @@
 A **feature-rich** and **interactive** rich text editor built with **React**, **TipTap**, and **Tailwind CSS**. This project showcases advanced formatting capabilities, custom extensions, and a seamless user experience.
 
 ## 🚀 Live Demo
-🔗 **URL:** [YouTube Summarizer API](https://tiptapp-ochre.vercel.app/)
+🔗 **URL:** [TIPTAP](https://tiptapp-ochre.vercel.app/)
 
 ## **✨ Features**  
 
